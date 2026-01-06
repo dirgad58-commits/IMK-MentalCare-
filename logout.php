@@ -4,5 +4,5 @@ require_once __DIR__ . '/config/session.php';
 $_SESSION = [];
 session_destroy();
 
-header("Location: /IMK/login.php");
+header("Location: /IMK-MentalCare-/login.php");
 exit;
