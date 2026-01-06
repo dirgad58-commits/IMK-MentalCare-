@@ -32,7 +32,7 @@ CARA MENJALANKAN APLIKASI (PALING CEPAT)
 TAHAP 1 – AMBIL PROJECT DARI GITHUB
 Anda bisa menggunakan salah satu cara berikut:
 1. Clone repository dengan Git
-   git clone <URL_REPO_GITHUB>
+   git clone <URL_REPO_GITHUB>/buka link->Tekan <>Code ->open with GitHub Desktop(instal dulu GitHub Desktop di Laptop)
 
 2. Atau download ZIP dari GitHub lalu extract folder project
 
