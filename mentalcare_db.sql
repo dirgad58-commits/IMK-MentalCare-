@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jan 2026 pada 10.44
+-- Waktu pembuatan: 06 Jan 2026 pada 13.56
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -66,7 +66,10 @@ INSERT INTO `answers` (`answer_id`, `question_id`, `user_id`, `content`, `is_bes
 (30, 13, 1, 'Coba “deadline palsu”: tetapkan due date internal 2 hari lebih awal dan lapor progres ke teman (accountability). Prokrastinasi sering kalah oleh komitmen sosial.', 0, '2026-01-05 17:49:25'),
 (31, 13, 1, 'Breakdown tugas jadi “langkah pertama super kecil”: buka file, tulis judul, buat 3 bullet. Jangan mulai dari “selesaikan semuanya”.', 0, '2026-01-05 19:49:25'),
 (32, 14, 2, 'Template 3 kalimat: “Hari ini saya merasa…”, “Pemicu utamanya…”, “Langkah kecil besok…”. Jangan panjang, yang penting konsisten.', 0, '2026-01-06 03:49:25'),
-(33, 14, 1, 'Kalau mau lebih terstruktur: nilai mood 1–10 + 1 hal yang kamu syukuri + 1 hal yang ingin kamu maafkan (diri sendiri/orang lain).', 0, '2026-01-06 04:49:25');
+(33, 14, 1, 'Kalau mau lebih terstruktur: nilai mood 1–10 + 1 hal yang kamu syukuri + 1 hal yang ingin kamu maafkan (diri sendiri/orang lain).', 0, '2026-01-06 04:49:25'),
+(34, 15, 3, 'Langkah sederhana yang bisa dicoba: tarik napas 4 detik, hembuskan 6 detik selama 5 menit.\nLalu tulis 1 hal yang bisa kamu kontrol hari ini.', 0, '2026-01-04 19:32:18'),
+(35, 15, 1, 'Kalau kecemasan sering muncul, coba perhatikan pola tidur dan kafein.\nHal kecil ini sering berpengaruh besar.', 0, '2026-01-05 19:32:18'),
+(36, 16, 3, 'Buat target super kecil: cukup 3 kalimat per hari.\nFokus konsisten, bukan panjang tulisan.', 1, '2026-01-05 19:32:18');
 
 -- --------------------------------------------------------
 
@@ -81,6 +84,13 @@ CREATE TABLE `answer_votes` (
   `vote_type` enum('upvote') DEFAULT 'upvote',
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `answer_votes`
+--
+
+INSERT INTO `answer_votes` (`vote_id`, `answer_id`, `user_id`, `vote_type`, `created_at`) VALUES
+(1, 8, 2, 'upvote', '2026-01-06 19:35:49');
 
 -- --------------------------------------------------------
 
@@ -159,7 +169,10 @@ INSERT INTO `journals` (`journal_id`, `user_id`, `title`, `content`, `mood`, `cr
 (7, 2, 'Aku menunda lagi, tapi masih bisa diperbaiki', 'Saya menunda satu tugas dan merasa bersalah.\nSaya coba ganti rasa bersalah jadi rencana: mulai dari 10 menit pertama.\nSetelah mulai, ternyata tidak seberat yang saya bayangkan.', 'cemas', '2026-01-01 13:52:10'),
 (8, 2, 'Hari yang cukup baik', 'Tidak ada hal besar, tapi hari ini terasa lebih ringan.\nSaya bersyukur untuk hal kecil: makan teratur dan pekerjaan selesai sebagian.\nSaya ingin mempertahankan ritme ini.', 'senang', '2026-01-03 13:52:10'),
 (9, 2, 'Mengatur prioritas biar tidak tenggelam', 'Saya menuliskan 3 prioritas utama hari ini.\nSisanya saya taruh di daftar “nanti”, bukan untuk dilupakan, tapi untuk ditunda dengan sadar.\nSaya merasa lebih terkendali.', '', '2026-01-04 13:52:10'),
-(10, 2, 'Penutup hari: evaluasi tanpa menghakimi', 'Saya mengevaluasi hari ini dengan lebih lembut.\nSaya masih punya kekurangan, tapi juga ada hal yang sudah saya usahakan.\nBesok saya ingin mulai dengan satu langkah kecil.', '', '2026-01-06 01:52:10');
+(10, 2, 'Penutup hari: evaluasi tanpa menghakimi', 'Saya mengevaluasi hari ini dengan lebih lembut.\nSaya masih punya kekurangan, tapi juga ada hal yang sudah saya usahakan.\nBesok saya ingin mulai dengan satu langkah kecil.', '', '2026-01-06 01:52:10'),
+(11, 3, 'Hari Pertama Pakai MentalCare', 'Hari ini saya mencoba menulis jurnal singkat.\nSaya merasa cukup tenang dan ingin lebih konsisten.\nLangkah kecil saya: menulis 5 menit setiap malam.', 'senang', '2026-01-03 19:32:18'),
+(12, 3, 'Sedikit Cemas Tapi Masih Terkontrol', 'Pikiran agak ramai hari ini.\nSaya mencoba teknik napas dan menuliskan apa yang saya rasakan.\nTernyata cukup membantu.', 'cemas', '2026-01-04 19:32:18'),
+(13, 3, 'Belajar Menghargai Proses', 'Tidak semua hari harus produktif.\nHari ini saya memilih istirahat tanpa merasa bersalah.', 'netral', '2026-01-05 19:32:18');
 
 -- --------------------------------------------------------
 
@@ -195,7 +208,9 @@ INSERT INTO `questions` (`question_id`, `user_id`, `title`, `content`, `category
 (11, 1, 'Setelah putus, saya susah fokus dan kepikiran terus', 'Hubungan saya baru berakhir. Saya pengen move on, tapi tiap hari keinget. Ada cara sederhana untuk pulih tanpa memaksa?', 'Relasi', 1, '2026-01-03 13:49:24'),
 (12, 1, 'Pernah sesak dan takut mati mendadak, itu panic attack kah?', 'Beberapa kali saya tiba-tiba sesak, pusing, tangan dingin, dan takut mati. Setelah 10–15 menit reda. Apa yang harus saya lakukan saat terjadi?', 'Kecemasan', 0, '2026-01-04 13:49:24'),
 (13, 1, 'Prokrastinasi: selalu mulai mepet deadline, capek sendiri', 'Saya selalu mulai mepet deadline. Pas mepet malah panik dan hasil kurang maksimal. Ada metode yang cocok untuk kebiasaan ini?', 'Produktivitas', 0, '2026-01-05 13:49:24'),
-(14, 1, 'Ingin mulai journaling tapi bingung harus nulis apa', 'Saya ingin mulai jurnal untuk merapikan pikiran, tapi setiap buka halaman kosong jadi bingung. Ada template yang gampang?', 'Refleksi', 0, '2026-01-06 01:49:25');
+(14, 1, 'Ingin mulai journaling tapi bingung harus nulis apa', 'Saya ingin mulai jurnal untuk merapikan pikiran, tapi setiap buka halaman kosong jadi bingung. Ada template yang gampang?', 'Refleksi', 0, '2026-01-06 01:49:25'),
+(15, 3, 'Bagaimana cara mengelola kecemasan ringan sehari-hari?', 'Saya sering merasa cemas tanpa sebab jelas, terutama sore hari. Apa langkah kecil yang aman untuk dicoba?', 'Kecemasan', 0, '2026-01-02 19:32:18'),
+(16, 3, 'Ingin mulai journaling tapi bingung konsisten', 'Saya sering menulis di awal tapi berhenti di tengah jalan. Ada tips agar bisa bertahan?', 'Refleksi', 1, '2026-01-03 19:32:18');
 
 -- --------------------------------------------------------
 
@@ -222,7 +237,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `full_name`, `email`, `phone`, `bio`, `photo`, `password`, `created_at`, `updated_at`) VALUES
 (1, 'dirga', NULL, 'dirgad58@gmail.com', NULL, NULL, NULL, 'dirga123', '2026-01-05 13:12:31', NULL),
-(2, 'reno44', 'La Ode Hasman', 'reno@gmail.com', '082282919102', '', 'uploads/avatars/u2_009a31ef87cf.jpg', 'reno123', '2026-01-06 07:51:13', '2026-01-06 17:04:22');
+(2, 'reno44', 'La Ode Hasman', 'reno@gmail.com', '082282919102', '', 'uploads/avatars/u2_009a31ef87cf.jpg', 'reno123', '2026-01-06 07:51:13', '2026-01-06 17:04:22'),
+(3, 'demo_user', 'Akun Demo MentalCare', 'demo@mentalcare.local', NULL, 'Akun demo untuk melihat seluruh fitur MentalCare dengan data contoh.', NULL, 'demo123', '2026-01-06 19:32:18', NULL);
 
 --
 -- Indexes for dumped tables
@@ -293,13 +309,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `answer_votes`
 --
 ALTER TABLE `answer_votes`
-  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `contact_messages`
@@ -317,19 +333,19 @@ ALTER TABLE `content_reports`
 -- AUTO_INCREMENT untuk tabel `journals`
 --
 ALTER TABLE `journals`
-  MODIFY `journal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `journal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
