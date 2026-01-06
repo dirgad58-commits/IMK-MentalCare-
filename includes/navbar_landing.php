@@ -1,6 +1,6 @@
 <?php
 // includes/navbar_landing.php
-$BASE_URL = $BASE_URL ?? '/IMK/';
+$BASE_URL = $BASE_URL ?? '/IMK-MentalCare-/';
 $isLoggedIn = $isLoggedIn ?? isset($_SESSION['user_id']);
 ?>
 <nav class="navbar navbar-expand-lg navbar-blur navbar-light fixed-top" aria-label="Navigasi utama">
