@@ -58,7 +58,7 @@ include __DIR__ . '/../includes/header.php';
     <main class="col-md-9 col-lg-10 p-4">
 
       <div class="mb-3">
-        <a href="/IMK/discussion/index.php" class="text-decoration-none">
+        <a href="/IMK-MentalCare-/discussion/index.php" class="text-decoration-none">
           <i class="bi bi-arrow-left"></i> Kembali
         </a>
       </div>
@@ -112,7 +112,7 @@ include __DIR__ . '/../includes/header.php';
                 </span>
 
                 <!-- Upvote (sekali per user per answer) -->
-                <form action="/IMK/process/vote_process.php" method="POST" class="m-0">
+                <form action="/IMK-MentalCare-/process/vote_process.php" method="POST" class="m-0">
                   <input type="hidden" name="answer_id" value="<?= (int)$a['answer_id']; ?>">
                   <input type="hidden" name="question_id" value="<?= (int)$question_id; ?>">
                   <button class="btn btn-sm <?= ((int)$a['has_voted'] > 0) ? 'btn-secondary' : 'btn-outline-secondary'; ?>"
@@ -125,7 +125,7 @@ include __DIR__ . '/../includes/header.php';
 
                 <!-- Best Answer (hanya pemilik pertanyaan) -->
                 <?php if ($is_owner): ?>
-                  <form action="/IMK/process/best_answer_process.php" method="POST" class="m-0">
+                  <form action="/IMK-MentalCare-/process/best_answer_process.php" method="POST" class="m-0">
                     <input type="hidden" name="answer_id" value="<?= (int)$a['answer_id']; ?>">
                     <input type="hidden" name="question_id" value="<?= (int)$question_id; ?>">
                     <button class="btn btn-sm btn-outline-success" type="submit">
@@ -144,7 +144,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="card-body">
           <h6 class="fw-semibold mb-3">Tulis Jawaban</h6>
 
-          <form action="/IMK/process/answer_process.php" method="POST">
+          <form action="/IMK-MentalCare-/process/answer_process.php" method="POST">
             <input type="hidden" name="question_id" value="<?= (int)$question_id; ?>">
 
             <textarea name="content" class="form-control mb-3" rows="4"
