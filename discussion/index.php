@@ -34,7 +34,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
 
         <!-- Gunakan tombol brand agar konsisten -->
-        <a href="/IMK/discussion/create.php" class="btn btn-brand">
+        <a href="/IMK-MentalCare-/discussion/create.php" class="btn btn-brand">
           <i class="bi bi-plus-circle me-1"></i> Buat Pertanyaan
         </a>
       </div>
@@ -69,7 +69,7 @@ include __DIR__ . '/../includes/header.php';
             <div>
               <div class="fw-bold mb-1">Belum ada pertanyaan</div>
               <div class="text-muted mb-3">Jadilah yang pertama bertanya agar diskusi mulai berjalan.</div>
-              <a href="/IMK/discussion/create.php" class="btn btn-brand">
+              <a href="/IMK-MentalCare-/discussion/create.php" class="btn btn-brand">
                 <i class="bi bi-plus-circle me-1"></i> Buat Pertanyaan
               </a>
             </div>
@@ -94,7 +94,7 @@ include __DIR__ . '/../includes/header.php';
 
             <!-- Title -->
             <div class="mc-thread-title">
-              <a class="mc-thread-link" href="/IMK/discussion/detail.php?question_id=<?= $qid; ?>">
+              <a class="mc-thread-link" href="/IMK-MentalCare-/discussion/detail.php?question_id=<?= $qid; ?>">
                 <?= $title; ?>
               </a>
             </div>
@@ -125,7 +125,7 @@ include __DIR__ . '/../includes/header.php';
               </div>
 
               <a class="btn btn-sm btn-outline-brand"
-                 href="/IMK/discussion/detail.php?question_id=<?= $qid; ?>">
+                 href="/IMK-MentalCare-/discussion/detail.php?question_id=<?= $qid; ?>">
                 Lihat Diskusi <i class="bi bi-arrow-right ms-1"></i>
               </a>
             </div>
