@@ -286,7 +286,7 @@ $old_email    = $_GET['e'] ?? '';
 </style>
 
 <!-- Tombol kembali (DI LUAR KOTAK) -->
-<a href="/IMK/index.php" class="btn auth-back">
+<a href="/IMK-MentalCare-/index.php" class="btn auth-back">
   <i class="bi bi-arrow-left"></i> Kembali
 </a>
 
@@ -357,7 +357,7 @@ $old_email    = $_GET['e'] ?? '';
                 </div>
               <?php endif; ?>
 
-              <form action="/IMK/process/register_process.php" method="POST" autocomplete="off">
+              <form action="/IMK-MentalCare-/process/register_process.php" method="POST" autocomplete="off">
 
                 <!-- Username -->
                 <div class="mb-3">
@@ -458,7 +458,7 @@ $old_email    = $_GET['e'] ?? '';
 
               <div class="auth-foot">
                 Sudah punya akun?
-                <a href="/IMK/login.php">Login</a>
+                <a href="/IMK-MentalCare-/login.php">Login</a>
               </div>
 
             </div>
