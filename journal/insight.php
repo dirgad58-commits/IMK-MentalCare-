@@ -195,10 +195,10 @@ include __DIR__ . '/../includes/header.php';
           </p>
         </div>
         <div class="d-flex gap-2 flex-wrap">
-          <a href="/IMK/journal/create.php" class="btn btn-primary">
+          <a href="/IMK-MentalCare-/journal/create.php" class="btn btn-primary">
             <i class="bi bi-journal-plus me-1"></i>Tulis Jurnal
           </a>
-          <a href="/IMK/journal/index.php" class="btn btn-outline-primary">
+          <a href="/IMK-MentalCare-/journal/index.php" class="btn btn-outline-primary">
             <i class="bi bi-list-ul me-1"></i>Daftar Jurnal
           </a>
         </div>
@@ -220,7 +220,7 @@ include __DIR__ . '/../includes/header.php';
               <button class="btn btn-primary" type="submit">
                 <i class="bi bi-funnel me-1"></i>Terapkan
               </button>
-              <a class="btn btn-outline-secondary" href="/IMK/journal/insight.php">
+              <a class="btn btn-outline-secondary" href="/IMK-MentalCare-/journal/insight.php">
                 Reset
               </a>
               <div class="ms-auto text-muted small align-self-center">
