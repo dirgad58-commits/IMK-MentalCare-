@@ -5,7 +5,7 @@
 require_once __DIR__ . '/config/session.php';
 require_once __DIR__ . '/config/database.php';
 
-$BASE_URL = '/IMK/';
+$BASE_URL = '/IMK-MentalCare-/';
 
 function getCount(mysqli $conn, string $sql): int {
     $res = mysqli_query($conn, $sql);
