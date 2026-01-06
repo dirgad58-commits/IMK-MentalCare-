@@ -149,10 +149,10 @@ include __DIR__ . '/../includes/header.php';
           <p class="text-muted mb-0">Catat emosi, refleksi, dan kemajuan kecil Anda setiap hari.</p>
         </div>
         <div class="d-flex gap-2 flex-wrap">
-          <a href="/IMK/journal/create.php" class="btn btn-primary">
+          <a href="/IMK-MentalCare-/journal/create.php" class="btn btn-primary">
             <i class="bi bi-journal-plus me-1"></i> Tulis Jurnal
           </a>
-          <a href="/IMK/journal/insight.php" class="btn btn-outline-primary">
+          <a href="/IMK-MentalCare-/journal/insight.php" class="btn btn-outline-primary">
             <i class="bi bi-graph-up me-1"></i> Insight
           </a>
         </div>
@@ -260,7 +260,7 @@ include __DIR__ . '/../includes/header.php';
               <button class="btn btn-primary" type="submit">
                 <i class="bi bi-funnel me-1"></i>Terapkan
               </button>
-              <a class="btn btn-outline-secondary" href="/IMK/journal/index.php">
+              <a class="btn btn-outline-secondary" href="/IMK-MentalCare-/journal/index.php">
                 Reset
               </a>
               <div class="ms-auto text-muted small">
@@ -283,7 +283,7 @@ include __DIR__ . '/../includes/header.php';
               <div>
                 <div class="fw-semibold">Belum ada jurnal yang cocok dengan filter.</div>
                 <div class="text-muted">Coba reset filter atau buat jurnal baru untuk memulai.</div>
-                <a href="/IMK/journal/create.php" class="btn btn-primary mt-2">
+                <a href="/IMK-MentalCare-/journal/create.php" class="btn btn-primary mt-2">
                   <i class="bi bi-journal-plus me-1"></i>Tulis Jurnal
                 </a>
               </div>
@@ -318,7 +318,7 @@ include __DIR__ . '/../includes/header.php';
         <div class="flex-grow-1">
           <!-- stretched-link membuat seluruh area konten bisa diklik -->
           <a class="stretched-link text-decoration-none"
-             href="/IMK/journal/detail.php?journal_id=<?= (int)$j['journal_id']; ?>">
+             href="/IMK-MentalCare-/journal/detail.php?journal_id=<?= (int)$j['journal_id']; ?>">
             <div class="d-flex align-items-center gap-2 flex-wrap">
               <div class="fw-semibold fs-5 text-dark">
                 <?= htmlspecialchars($title); ?>
@@ -344,10 +344,10 @@ include __DIR__ . '/../includes/header.php';
 
         <!-- AKSI (tidak ikut klik stretched-link) -->
         <div class="d-flex gap-2 position-relative" style="z-index: 2;">
-          <a href="/IMK/journal/detail.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-sm btn-primary">
+          <a href="/IMK-MentalCare-/journal/detail.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-sm btn-primary">
             <i class="bi bi-eye me-1"></i>Baca
           </a>
-          <a href="/IMK/journal/edit.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-sm btn-outline-primary">
+          <a href="/IMK-MentalCare-/journal/edit.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-sm btn-outline-primary">
             <i class="bi bi-pencil me-1"></i>Edit
           </a>
           <button class="btn btn-sm btn-outline-danger"
@@ -375,7 +375,7 @@ include __DIR__ . '/../includes/header.php';
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
-          <a href="/IMK/journal/delete.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-danger">
+          <a href="/IMK-MentalCare-/journal/delete.php?journal_id=<?= (int)$j['journal_id']; ?>" class="btn btn-danger">
             <i class="bi bi-trash me-1"></i>Hapus
           </a>
         </div>
