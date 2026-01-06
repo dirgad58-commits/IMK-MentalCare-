@@ -258,7 +258,7 @@ $error = $_GET['error'] ?? '';
 </style>
 
 <!-- Tombol kembali (DI LUAR KOTAK) -->
-<a href="/IMK/index.php" class="btn auth-back">
+<a href="/IMK-MentalCare-/index.php" class="btn auth-back">
   <i class="bi bi-arrow-left"></i> Kembali
 </a>
 
@@ -329,7 +329,7 @@ $error = $_GET['error'] ?? '';
                 </div>
               <?php endif; ?>
 
-              <form action="/IMK/process/auth_process.php" method="POST" autocomplete="off">
+              <form action="/IMK-MentalCare-/process/auth_process.php" method="POST" autocomplete="off">
 
                 <!-- Email -->
                 <div class="mb-3">
@@ -388,7 +388,7 @@ $error = $_GET['error'] ?? '';
 
               <div class="auth-foot">
                 Belum punya akun?
-                <a href="/IMK/register.php">Register</a>
+                <a href="/IMK-MentalCare-/register.php">Register</a>
               </div>
 
             </div>
