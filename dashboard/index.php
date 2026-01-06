@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id  = (int)$_SESSION['user_id'];
-$APP_BASE = '/IMK/';
+$APP_BASE = '/IMK-MentalCare-/';
 
 function scalar($conn, $sql, $types = '', $params = []) {
     $stmt = mysqli_prepare($conn, $sql);
