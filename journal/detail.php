@@ -42,11 +42,11 @@ include __DIR__ . '/../includes/header.php';
           <p class="text-muted mb-0">Baca kembali catatan Anda dengan tenang.</p>
         </div>
         <div class="d-flex gap-2">
-          <a href="/IMK/journal/index.php" class="btn btn-outline-primary">
+          <a href="/IMK-MentalCare-/journal/index.php" class="btn btn-outline-primary">
             <i class="bi bi-arrow-left me-1"></i>Kembali
           </a>
           <!-- Jika Anda belum punya edit.php, boleh hapus tombol ini -->
-          <a href="/IMK/journal/edit.php?journal_id=<?= (int)$journal_id; ?>" class="btn btn-primary">
+          <a href="/IMK-MentalCare-/journal/edit.php?journal_id=<?= (int)$journal_id; ?>" class="btn btn-primary">
             <i class="bi bi-pencil-square me-1"></i>Edit
           </a>
         </div>
@@ -81,7 +81,7 @@ include __DIR__ . '/../includes/header.php';
 
               <div class="d-flex gap-2">
                 <!-- Tombol aksi opsional -->
-                <a href="/IMK/journal/create.php" class="btn btn-outline-primary btn-sm">
+                <a href="/IMK-MentalCare-/journal/create.php" class="btn btn-outline-primary btn-sm">
                   <i class="bi bi-journal-plus me-1"></i>Tulis Baru
                 </a>
               </div>
