@@ -1,5 +1,5 @@
 <?php
-$BASE_URL = $BASE_URL ?? '/IMK/';
+$BASE_URL = $BASE_URL ?? '/IMK-MentalCare-/';
 ?>
 <footer class="footer">
   <div class="container">
