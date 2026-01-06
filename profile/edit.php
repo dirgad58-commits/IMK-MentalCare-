@@ -12,7 +12,7 @@ $user_id = (int)$_SESSION['user_id'];
 $error   = $_GET['error'] ?? '';
 $success = $_GET['success'] ?? '';
 
-$APP_BASE = '/IMK/';
+$APP_BASE = '/IMK-MentalCare-/';
 
 // CSRF token (kalau proses Anda mengecek token; aman walau belum dipakai)
 if (empty($_SESSION['csrf_token'])) {
@@ -43,7 +43,7 @@ if (!$user) {
 $photoUrl = '';
 if (!empty($user['photo'])) {
     $rel = ltrim($user['photo'], '/');
-    $fs  = __DIR__ . '/../' . $rel; // contoh: /IMK/uploads/avatars/xxx.jpg
+    $fs  = __DIR__ . '/../' . $rel; // contoh: /IMK-MentalCare-/uploads/avatars/xxx.jpg
 
     if (is_file($fs)) {
         $v = @filemtime($fs) ?: time();
@@ -69,7 +69,7 @@ require_once __DIR__ . '/../includes/header.php';
           <p class="text-muted mb-0">Perbarui foto, data diri, dan bio Anda.</p>
         </div>
 
-        <!-- FIX: link harus sesuai base /IMK/ -->
+        <!-- FIX: link harus sesuai base /IMK-MentalCare-/ -->
         <a href="<?= $APP_BASE; ?>profile/index.php" class="btn btn-outline-secondary">
           <i class="bi bi-arrow-left me-1"></i>Kembali
         </a>
@@ -86,7 +86,7 @@ require_once __DIR__ . '/../includes/header.php';
       <div class="card shadow-sm" style="border-radius:18px;">
         <div class="card-body">
 
-          <!-- FIX UTAMA: action harus /IMK/process/... (bukan ../process/...) -->
+          <!-- FIX UTAMA: action harus /IMK-MentalCare-/process/... (bukan ../process/...) -->
           <form action="<?= $APP_BASE; ?>process/profile_process.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
 
