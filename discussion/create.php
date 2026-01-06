@@ -23,7 +23,7 @@ include __DIR__ . '/../includes/header.php';
 
       <div class="card shadow-sm">
         <div class="card-body">
-          <form action="/IMK/process/question_process.php" method="POST">
+          <form action="/IMK-MentalCare-/process/question_process.php" method="POST">
 
             <div class="mb-3">
               <label class="form-label">Judul</label>
@@ -49,7 +49,7 @@ include __DIR__ . '/../includes/header.php';
               <i class="bi bi-send me-1"></i> Posting
             </button>
 
-            <a href="/IMK/discussion/index.php" class="btn btn-outline-secondary ms-2">Batal</a>
+            <a href="/IMK-MentalCare-/discussion/index.php" class="btn btn-outline-secondary ms-2">Batal</a>
           </form>
         </div>
       </div>
