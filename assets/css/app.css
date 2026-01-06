@@ -1,0 +1,764 @@
+/* =========================================================
+   MentalCare Theme (Teal Palette - ColorHunt)
+   Palette:
+   - #005461 (dark teal)
+   - #018790 (teal)
+   - #00B7B5 (bright teal)
+   - #F4F4F4 (light gray)
+   File: /IMK/assets/css/app.css
+========================================================= */
+
+/* -------------------------
+   1) Variables
+------------------------- */
+:root{
+  --mc-dark:   #005461;
+  --mc-teal:   #018790;
+  --mc-bright: #00B7B5;
+  --mc-soft:   #F4F4F4;
+
+  --mc-text: #0f172a;
+  --mc-muted:#475569;
+
+  --mc-border: rgba(0, 84, 97, 0.18);
+  --mc-shadow-sm: 0 10px 25px rgba(0, 84, 97, 0.12);
+  --mc-shadow:    0 18px 45px rgba(0, 84, 97, 0.18);
+
+  --mc-radius: 18px;
+  --mc-radius-sm: 14px;
+}
+
+/* Bootstrap vars override */
+:root{
+  --bs-primary: var(--mc-teal);
+  --bs-success: var(--mc-bright);
+  --bs-body-color: var(--mc-text);
+  --bs-body-bg: transparent;
+  --bs-border-color: var(--mc-border);
+}
+
+/* -------------------------
+   2) Background (NOT white)
+------------------------- */
+.app-bg{
+  min-height: 100vh;
+  color: var(--mc-text);
+
+  /* Teal aurora + soft gray base */
+  background:
+    radial-gradient(1100px 700px at 15% 10%, rgba(0, 183, 181, .28), transparent 60%),
+    radial-gradient(1000px 650px at 85% 12%, rgba(1, 135, 144, .22), transparent 60%),
+    radial-gradient(900px 650px at 40% 95%, rgba(0, 84, 97, .18), transparent 60%),
+    linear-gradient(180deg, #e9f6f6, var(--mc-soft));
+}
+
+/* Text helpers */
+.text-muted{ color: var(--mc-muted) !important; }
+.muted-small{ font-size: 12px; color: var(--mc-muted) !important; }
+
+/* Links */
+a{ color: var(--mc-teal); }
+a:hover{ color: var(--mc-dark); }
+
+/* -------------------------
+   3) Cards (tinted surface)
+------------------------- */
+.card{
+  border: 1px solid var(--mc-border) !important;
+  border-radius: var(--mc-radius) !important;
+
+  /* tinted, not pure white */
+  background:
+    linear-gradient(180deg, rgba(244,244,244,.88), rgba(244,244,244,.72)) !important;
+
+  backdrop-filter: blur(10px);
+  box-shadow: var(--mc-shadow-sm);
+}
+
+.card.shadow-sm{
+  box-shadow: var(--mc-shadow-sm) !important;
+}
+
+/* -------------------------
+   4) Sidebar (override bg-white !important)
+   NOTE: aside has class bg-white from Bootstrap -> must override strongly
+------------------------- */
+.sidebar-wrapper{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* This is the critical override */
+aside.sidebar-wrapper.bg-white{
+  background:
+    radial-gradient(900px 650px at 20% 0%, rgba(0, 183, 181, .28), transparent 60%),
+    radial-gradient(800px 600px at 85% 10%, rgba(1, 135, 144, .22), transparent 65%),
+    linear-gradient(180deg, rgba(244,244,244,.86), rgba(233,246,246,.86)) !important;
+
+  border-right: 1px solid var(--mc-border) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* Brand */
+.sidebar-brand h5{ letter-spacing: .2px; }
+.sidebar-brand small{ display:block; margin-top:-4px; color: var(--mc-muted) !important; }
+
+/* User Panel */
+.user-panel{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  border: 1px solid var(--mc-border);
+  border-radius: var(--mc-radius);
+
+  background:
+    linear-gradient(135deg, rgba(0,183,181,.14), rgba(1,135,144,.10));
+  box-shadow: var(--mc-shadow-sm);
+  margin:16px 0;
+}
+
+.user-avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--mc-teal), var(--mc-bright));
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:16px;
+  flex-shrink:0;
+}
+
+.user-meta .name{ font-weight:800; font-size:14px; line-height:1.2; color: var(--mc-text); }
+.user-meta .role{ font-size:12px; color: var(--mc-muted); line-height:1.2; }
+
+/* -------------------------
+   5) Sidebar Menu
+------------------------- */
+.sidebar-menu .nav-link{
+  border-radius: var(--mc-radius-sm);
+  color: var(--mc-text);
+  padding: 12px 12px;
+  transition: all .15s ease;
+}
+
+.sidebar-menu .nav-link:hover{
+  background: rgba(0, 183, 181, .14);
+  transform: translateX(2px);
+}
+
+.sidebar-menu .nav-link.active{
+  background: linear-gradient(135deg, var(--mc-teal), var(--mc-bright));
+  color:#fff;
+  box-shadow: 0 12px 30px rgba(1,135,144,.25);
+}
+
+.sidebar-menu .nav-link i{ opacity: .95; }
+
+/* -------------------------
+   6) Buttons (teal gradient)
+------------------------- */
+.btn{ border-radius: 14px; }
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--mc-teal), var(--mc-bright));
+  border: 0;
+  box-shadow: 0 14px 30px rgba(1,135,144,.22);
+}
+
+.btn-primary:hover{ filter: brightness(.98); }
+
+.btn-outline-primary{
+  border-color: rgba(1,135,144,.55);
+  color: var(--mc-dark);
+  background: rgba(0,183,181,.10);
+}
+
+.btn-outline-primary:hover{
+  background: rgba(0,183,181,.16);
+  border-color: rgba(1,135,144,.70);
+}
+
+/* Logout button still clear */
+.btn-outline-danger{
+  background: rgba(244,244,244,.35);
+  border-radius: 14px;
+}
+
+/* -------------------------
+   7) Badges / Pills
+------------------------- */
+.badge-soft{
+  background: rgba(0, 183, 181, .14);
+  border: 1px solid rgba(0, 183, 181, .22);
+  color: var(--mc-dark);
+  border-radius: 999px;
+}
+
+.vote-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px;
+  border-radius:999px;
+
+  background: rgba(1,135,144,.10);
+  border: 1px solid rgba(1,135,144,.18);
+  font-size:12px;
+}
+
+/* Best answer border */
+.best-border{
+  border: 1px solid rgba(0, 183, 181, .55) !important;
+}
+
+/* Snippet */
+.content-snippet{ color:#334155; }
+
+/* -------------------------
+   8) SelfHelp polish
+------------------------- */
+.selfhelp-hero{
+  background:
+    linear-gradient(135deg, rgba(1,135,144,.18), rgba(0,183,181,.14)) !important;
+}
+
+.selfhelp-card{
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.selfhelp-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--mc-shadow) !important;
+}
+
+/* -------------------------
+   9) Forms (tinted, not white)
+------------------------- */
+.form-control,
+.form-select{
+  border-radius: 14px;
+  border-color: rgba(0, 84, 97, .18);
+  background: rgba(244,244,244,.72);
+}
+
+.form-control:focus,
+.form-select:focus{
+  border-color: rgba(0, 183, 181, .70);
+  box-shadow: 0 0 0 .25rem rgba(0, 183, 181, .18);
+  background: rgba(233,246,246,.82);
+}
+
+/* -------------------------
+   10) Minor polish
+------------------------- */
+hr{ border-color: rgba(0, 84, 97, .16); }
+
+/* Sidebar scrollbar */
+.sidebar-wrapper::-webkit-scrollbar{ width: 10px; }
+.sidebar-wrapper::-webkit-scrollbar-thumb{
+  background: rgba(0, 84, 97, .22);
+  border-radius: 999px;
+}
+.sidebar-wrapper::-webkit-scrollbar-thumb:hover{
+  background: rgba(0, 84, 97, .30);
+}
+
+.muted-small{
+  color: #6c757d;
+  font-size: .9rem;
+}
+
+.card{
+  border-radius: 14px;
+}
+
+.list-group-item{
+  border-color: rgba(0,0,0,.06) !important;
+}
+
+.progress{
+  background: rgba(13,110,253,.12);
+}.muted-small{
+  color:#64748b;
+  font-size:.92rem;
+}
+
+nav a{
+  padding:.55rem 1rem;
+  border-radius:999px;
+  text-decoration:none;
+  color:#111;
+  font-weight:700;
+}
+
+nav a.active{
+  background:#0aa7a3; /* hijau */
+  color:#fff;
+}
+
+.user-avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+  background: rgba(1,135,144,.12);
+  border: 1px solid rgba(1,135,144,.18);
+  color: #005461;
+}
+
+.user-avatar .avatar-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+/* ===== Sidebar user panel (fix avatar membesar) ===== */
+.sidebar-wrapper .mc-user-panel{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  border-radius: 18px;
+  background: rgba(0,183,181,.10);
+  border: 1px solid rgba(0,183,181,.18);
+  margin-bottom: 14px;
+}
+
+.sidebar-wrapper .mc-sidebar-avatar{
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border-radius: 999px;
+  overflow: hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(1,135,144,.14);
+  border: 1px solid rgba(1,135,144,.18);
+}
+
+/* Ini yang mengunci ukuran gambar agar tidak “meluber” */
+.sidebar-wrapper .mc-sidebar-avatar-img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display:block;
+  position: static !important;
+  max-width: 100% !important;
+}
+
+.sidebar-wrapper .mc-sidebar-initial{
+  font-weight: 800;
+  color: #005461;
+  line-height: 1;
+}
+
+.sidebar-wrapper .mc-user-meta{ min-width: 0; }
+.sidebar-wrapper .mc-user-name{
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+.sidebar-wrapper .mc-user-role{
+  font-size: .85rem;
+  color: rgba(15,23,42,.65);
+}
+/* =========================
+   MentalCare Color System (lebih menarik)
+   ========================= */
+:root{
+  /* brand */
+  --mc-primary: #018790;        /* teal utama */
+  --mc-primary-700:#006d77;     /* teal gelap */
+  --mc-accent:#5eead4;          /* mint */
+  --mc-accent-2:#60a5fa;        /* biru lembut (opsional untuk highlight info) */
+
+  /* surfaces */
+  --mc-bg: #f6fbfb;             /* background lebih “fresh” */
+  --mc-card:#ffffff;
+  --mc-border: rgba(2, 132, 199, .14);  /* border agak hidup */
+  --mc-shadow: 0 18px 55px rgba(1,135,144,.10);
+  --mc-shadow-2: 0 22px 65px rgba(1,135,144,.15);
+
+  /* text */
+  --mc-text:#0f172a;
+  --mc-muted:#64748b;
+
+  /* gradients */
+  --mc-grad: linear-gradient(135deg, rgba(1,135,144,.14), rgba(94,234,212,.14));
+  --mc-grad-strong: linear-gradient(135deg, #018790, #13c2c2);
+}
+
+/* global background supaya tidak flat */
+body{
+  background: var(--mc-bg) !important;
+}
+
+/* =========================
+   Sidebar: lebih berkarakter
+   ========================= */
+.sidebar-wrapper{
+  background: linear-gradient(180deg, rgba(1,135,144,.06), rgba(255,255,255,0));
+  border-right: 1px solid rgba(1,135,144,.12);
+}
+
+.sidebar-wrapper .nav-link{
+  border-radius: 16px;
+  color: var(--mc-text);
+}
+
+.sidebar-wrapper .nav-link:hover{
+  background: rgba(1,135,144,.08);
+}
+
+.sidebar-wrapper .nav-link.active{
+  background: var(--mc-grad-strong) !important;
+  color:#fff !important;
+  box-shadow: 0 14px 35px rgba(1,135,144,.22);
+}
+
+.sidebar-wrapper .nav-link.active i{
+  color:#fff !important;
+}
+
+/* user panel lebih “premium” */
+.sidebar-wrapper .mc-user-panel{
+  background: var(--mc-grad);
+  border: 1px solid rgba(1,135,144,.16);
+}
+
+.sidebar-wrapper .mc-sidebar-avatar{
+  border: 1px solid rgba(1,135,144,.22);
+  box-shadow: 0 10px 25px rgba(1,135,144,.10);
+}
+
+/* =========================
+   Card: tambahkan accent line
+   ========================= */
+.mc-card{
+  background: var(--mc-card);
+  border: 1px solid var(--mc-border);
+  border-radius: 18px;
+  box-shadow: var(--mc-shadow);
+}
+
+.mc-card:hover{
+  box-shadow: var(--mc-shadow-2);
+  transform: translateY(-1px);
+  transition: .15s ease;
+}
+
+/* garis aksen kiri (buat diskusi lebih menarik) */
+.mc-card-accent{
+  position: relative;
+}
+.mc-card-accent:before{
+  content:"";
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width: 6px;
+  border-radius: 18px 0 0 18px;
+  background: var(--mc-grad-strong);
+}
+
+/* =========================
+   Badge / chip lebih hidup
+   ========================= */
+.mc-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius: 999px;
+  font-weight:800;
+  font-size:.78rem;
+  border:1px solid rgba(1,135,144,.22);
+  background: rgba(1,135,144,.10);
+  color: var(--mc-primary-700);
+}
+
+/* badge kategori (opsional) */
+.mc-chip-info{
+  border-color: rgba(96,165,250,.30);
+  background: rgba(96,165,250,.12);
+  color: #1d4ed8;
+}
+
+/* =========================
+   Buttons: lebih kontras
+   ========================= */
+.btn-brand{
+  background: var(--mc-grad-strong) !important;
+  border: 0 !important;
+  color: #fff !important;
+  border-radius: 14px;
+  font-weight: 900;
+  box-shadow: 0 16px 40px rgba(1,135,144,.22);
+}
+.btn-brand:hover{
+  filter: brightness(.95);
+}
+
+.btn-outline-brand{
+  border: 1px solid rgba(1,135,144,.40) !important;
+  color: var(--mc-primary-700) !important;
+  background: #fff !important;
+  border-radius: 14px;
+  font-weight: 900;
+}
+.btn-outline-brand:hover{
+  background: rgba(1,135,144,.10) !important;
+}
+
+/* Search bar supaya lebih “rapi dan modern” */
+.form-control, .form-select{
+  border-radius: 14px;
+  border: 1px solid rgba(1,135,144,.18);
+}
+.form-control:focus, .form-select:focus{
+  border-color: rgba(1,135,144,.45);
+  box-shadow: 0 0 0 .25rem rgba(1,135,144,.14);
+}
+/* =========================================================
+   COLOR-CODED INTERACTIVE SIDEBAR — MentalCare
+   Tempel di paling bawah CSS global internal
+   ========================================================= */
+
+:root{
+  --mc-sb-bg: #f6fbfb;
+  --mc-sb-border: rgba(1,135,144,.14);
+  --mc-sb-shadow: 0 18px 55px rgba(1,135,144,.10);
+  --mc-text: #0f172a;
+  --mc-muted: #64748b;
+
+  /* warna aksen per menu */
+  --mc-dashboard: #018790;
+  --mc-journal:  #7c3aed;
+  --mc-discuss:  #2563eb;
+  --mc-self:     #f59e0b;
+  --mc-profile:  #16a34a;
+
+  --mc-grad-brand: linear-gradient(135deg, #018790, #13c2c2);
+}
+
+/* Sidebar surface */
+.sidebar-wrapper{
+  position: sticky;
+  top: 0;
+  background:
+    radial-gradient(1200px 800px at -20% -10%, rgba(1,135,144,.10), transparent 45%),
+    radial-gradient(900px 700px at 110% 15%, rgba(37,99,235,.08), transparent 48%),
+    radial-gradient(700px 500px at 30% 110%, rgba(245,158,11,.10), transparent 52%),
+    var(--mc-sb-bg);
+  border-right: 1px solid var(--mc-sb-border);
+  overflow: hidden;
+}
+
+/* garis gradient tipis di tepi sidebar biar tidak flat */
+.sidebar-wrapper::after{
+  content:"";
+  position:absolute;
+  top:0; right:0; bottom:0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(1,135,144,.0), rgba(1,135,144,.35), rgba(1,135,144,.0));
+  opacity:.7;
+  pointer-events:none;
+  z-index:0;
+}
+.sidebar-wrapper > *{ position:relative; z-index:1; }
+
+/* User panel lebih hidup */
+.sidebar-wrapper .mc-user-panel{
+  border: 1px solid rgba(1,135,144,.16);
+  background: linear-gradient(135deg, rgba(1,135,144,.14), rgba(94,234,212,.14));
+  box-shadow: var(--mc-sb-shadow);
+}
+
+/* =====================================
+   Menu item base + micro interactions
+   ===================================== */
+.sidebar-wrapper .sidebar-menu .nav-link{
+  position: relative;
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.66);
+  border: 1px solid rgba(1,135,144,.10);
+  color: var(--mc-text);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+
+/* Hover = naik sedikit + glow */
+.sidebar-wrapper .sidebar-menu .nav-link:hover{
+  transform: translateX(3px);
+  background: rgba(255,255,255,.9);
+  border-color: rgba(1,135,144,.18);
+  box-shadow: 0 16px 45px rgba(1,135,144,.10);
+}
+
+/* Indicator bar kiri */
+.sidebar-wrapper .sidebar-menu .nav-link::before{
+  content:"";
+  position:absolute;
+  left: 10px;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 999px;
+  background: var(--mc-item-grad, var(--mc-grad-brand));
+  opacity: 0;
+  transform: scaleY(.25);
+  transform-origin: center;
+  transition: opacity .15s ease, transform .15s ease;
+}
+
+.sidebar-wrapper .sidebar-menu .nav-link:hover::before{
+  opacity: .75;
+  transform: scaleY(.6);
+}
+
+/* =====================================
+   Icon bubble (ini yang bikin tidak polos)
+   ===================================== */
+.sidebar-wrapper .sidebar-menu .nav-link i{
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--mc-icon-bg, rgba(1,135,144,.10));
+  color: var(--mc-icon, #0f172a);
+  border: 1px solid var(--mc-icon-br, rgba(1,135,144,.16));
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.sidebar-wrapper .sidebar-menu .nav-link:hover i{
+  transform: rotate(-2deg) scale(1.03);
+}
+
+/* =====================================
+   Active state (lebih “brand” + jelas)
+   ===================================== */
+.sidebar-wrapper .sidebar-menu .nav-link.active{
+  background: var(--mc-item-grad, var(--mc-grad-brand)) !important;
+  color: #fff !important;
+  border-color: transparent;
+  box-shadow: 0 18px 55px rgba(1,135,144,.22);
+}
+.sidebar-wrapper .sidebar-menu .nav-link.active::before{
+  opacity: 1;
+  transform: scaleY(1);
+}
+.sidebar-wrapper .sidebar-menu .nav-link.active i{
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.20);
+  color: #fff !important;
+}
+
+/* =====================================
+   VARIASI WARNA PER MENU (tanpa ubah HTML)
+   berdasarkan href (punya Anda: /IMK/dashboard/, /journal/, /discussion/, /self_help/, /profile/)
+   ===================================== */
+.sidebar-wrapper .sidebar-menu .nav-link[href*="/dashboard/"]{
+  --mc-icon-bg: rgba(1,135,144,.12);
+  --mc-icon: #006d77;
+  --mc-icon-br: rgba(1,135,144,.18);
+  --mc-item-grad: linear-gradient(135deg, #018790, #13c2c2);
+}
+.sidebar-wrapper .sidebar-menu .nav-link[href*="/journal/"]{
+  --mc-icon-bg: rgba(124,58,237,.12);
+  --mc-icon: #6d28d9;
+  --mc-icon-br: rgba(124,58,237,.18);
+  --mc-item-grad: linear-gradient(135deg, #7c3aed, #a78bfa);
+}
+.sidebar-wrapper .sidebar-menu .nav-link[href*="/discussion/"]{
+  --mc-icon-bg: rgba(37,99,235,.12);
+  --mc-icon: #1d4ed8;
+  --mc-icon-br: rgba(37,99,235,.18);
+  --mc-item-grad: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+.sidebar-wrapper .sidebar-menu .nav-link[href*="/self_help/"]{
+  --mc-icon-bg: rgba(245,158,11,.14);
+  --mc-icon: #b45309;
+  --mc-icon-br: rgba(245,158,11,.20);
+  --mc-item-grad: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+.sidebar-wrapper .sidebar-menu .nav-link[href*="/profile/"]{
+  --mc-icon-bg: rgba(22,163,74,.12);
+  --mc-icon: #15803d;
+  --mc-icon-br: rgba(22,163,74,.18);
+  --mc-item-grad: linear-gradient(135deg, #16a34a, #86efac);
+}
+
+/* =====================================
+   Moving highlight (indikator background yang geser)
+   Elemen ini ditambahkan via JS (lihat bagian 2)
+   ===================================== */
+.mc-nav-indicator{
+  position:absolute;
+  left: 0;
+  right: 0;
+  height: 54px;
+  border-radius: 18px;
+  background: rgba(1,135,144,.10);
+  border: 1px solid rgba(1,135,144,.12);
+  box-shadow: 0 14px 40px rgba(1,135,144,.10);
+  transform: translateY(0);
+  transition: transform .22s ease, height .22s ease, opacity .22s ease;
+  opacity: 0;
+  pointer-events:none;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .sidebar-wrapper .sidebar-menu .nav-link,
+  .sidebar-wrapper .sidebar-menu .nav-link::before,
+  .sidebar-wrapper .sidebar-menu .nav-link i,
+  .mc-nav-indicator{
+    transition:none !important;
+  }
+}
+/* ================= HERO BACKGROUND IMAGE + TEAL OVERLAY ================= */
+.hero{
+  position: relative;
+  overflow: hidden;
+
+  /* fallback kalau image gagal load */
+  background-color: var(--teal);
+
+  /* layer 1 = overlay (di atas), layer 2 = gambar (di bawah) */
+  background-image:
+    linear-gradient(135deg,
+      rgba(0, 84, 97, .88) 0%,
+      rgba(1, 135, 144, .82) 45%,
+      rgba(0, 183, 181, .72) 100%
+    ),
+    url("../images/landing/hero-mental.jpg");
+
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+}
+
+/* Supaya di layar kecil gambar tetap enak (lebih ke tengah) */
+@media (max-width: 992px){
+  .hero{
+    background-position: center;
+  }
+}
