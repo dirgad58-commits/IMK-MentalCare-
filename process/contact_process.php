@@ -2,7 +2,7 @@
 require_once __DIR__ . '/../config/session.php';
 require_once __DIR__ . '/../config/database.php';
 
-$BASE_URL = '/IMK/';
+$BASE_URL = '/IMK-MentalCare-/';
 
 function redirect_with(string $msgKey, string $msg, string $anchor = 'kontak') {
     $q = http_build_query([$msgKey => $msg]);
