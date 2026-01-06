@@ -23,7 +23,7 @@ include __DIR__ . '/../includes/header.php';
 
       <div class="card shadow-sm">
         <div class="card-body">
-          <form action="/IMK/process/journal_process.php" method="POST">
+          <form action="/IMK-MentalCare-/process/journal_process.php" method="POST">
 
             <div class="mb-3">
               <label class="form-label">Judul (opsional)</label>
@@ -50,7 +50,7 @@ include __DIR__ . '/../includes/header.php';
               <i class="bi bi-save me-1"></i> Simpan
             </button>
 
-            <a href="/IMK/journal/index.php" class="btn btn-outline-secondary ms-2">Batal</a>
+            <a href="/IMK-MentalCare-/journal/index.php" class="btn btn-outline-secondary ms-2">Batal</a>
           </form>
         </div>
       </div>
