@@ -1,6 +1,6 @@
 <?php
 // includes/header_landing.php
-$BASE_URL = $BASE_URL ?? '/IMK/';
+$BASE_URL = $BASE_URL ?? '/IMK-MentalCare-/';
 $page_title = $page_title ?? 'MentalCare — Journal & Support';
 ?>
 <!doctype html>
