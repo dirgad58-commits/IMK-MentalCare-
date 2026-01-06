@@ -5,7 +5,7 @@
    - #018790 (teal)
    - #00B7B5 (bright teal)
    - #F4F4F4 (light gray)
-   File: /IMK/assets/css/app.css
+   File: /IMK-MentalCare-/assets/css/app.css
 ========================================================= */
 
 /* -------------------------
@@ -671,7 +671,7 @@ body{
 
 /* =====================================
    VARIASI WARNA PER MENU (tanpa ubah HTML)
-   berdasarkan href (punya Anda: /IMK/dashboard/, /journal/, /discussion/, /self_help/, /profile/)
+   berdasarkan href (punya Anda: /IMK-MentalCare-/dashboard/, /journal/, /discussion/, /self_help/, /profile/)
    ===================================== */
 .sidebar-wrapper .sidebar-menu .nav-link[href*="/dashboard/"]{
   --mc-icon-bg: rgba(1,135,144,.12);
