@@ -33,7 +33,7 @@ include __DIR__ . '/../includes/header.php';
           <h3 class="fw-bold mb-1">Pelaporan Konten</h3>
           <p class="text-muted mb-0">Laporkan konten yang merugikan/spam/pelecehan agar dapat ditinjau.</p>
         </div>
-        <a href="/IMK/discussion/index.php" class="btn btn-outline-primary">
+        <a href="/IMK-MentalCare-/discussion/index.php" class="btn btn-outline-primary">
           <i class="bi bi-arrow-left me-1"></i>Kembali
         </a>
       </div>
@@ -47,7 +47,7 @@ include __DIR__ . '/../includes/header.php';
 
       <div class="card shadow-sm" style="border-radius:18px;">
         <div class="card-body">
-          <form action="/IMK/report/submit.php" method="post" class="row g-3">
+          <form action="/IMK-MentalCare-/report/submit.php" method="post" class="row g-3">
 
             <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
 
