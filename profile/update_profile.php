@@ -8,24 +8,24 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = (int)$_SESSION['user_id'];
-$APP_BASE = '/IMK/';
+$APP_BASE = '/IMK-MentalCare-/';
 
 // CSRF (jika Anda pakai)
 if (empty($_POST['csrf_token']) || empty($_SESSION['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-  header("Location: /IMK/profile/index.php?error=Sesi tidak valid. Silakan refresh.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Sesi tidak valid. Silakan refresh.");
   exit;
 }
 
 // Pastikan ada file
 if (!isset($_FILES['photo']) || $_FILES['photo']['error'] === UPLOAD_ERR_NO_FILE) {
-  header("Location: /IMK/profile/index.php?error=Pilih foto terlebih dahulu.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Pilih foto terlebih dahulu.");
   exit;
 }
 
 // Tangani error upload PHP
 if ($_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
   $err = $_FILES['photo']['error'];
-  header("Location: /IMK/profile/index.php?error=Upload gagal (kode: {$err}).");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Upload gagal (kode: {$err}).");
   exit;
 }
 
@@ -35,7 +35,7 @@ $size    = (int)$_FILES['photo']['size'];
 // Validasi ukuran (contoh 2MB)
 $maxSize = 2 * 1024 * 1024;
 if ($size > $maxSize) {
-  header("Location: /IMK/profile/index.php?error=Ukuran foto maksimal 2MB.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Ukuran foto maksimal 2MB.");
   exit;
 }
 
@@ -50,7 +50,7 @@ $allowed = [
 ];
 
 if (!isset($allowed[$mime])) {
-  header("Location: /IMK/profile/index.php?error=Format file harus JPG/PNG/WEBP.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Format file harus JPG/PNG/WEBP.");
   exit;
 }
 
@@ -61,7 +61,7 @@ $uploadDir = __DIR__ . '/../uploads/avatars/';
 if (!is_dir($uploadDir)) {
   // buat folder jika belum ada
   if (!mkdir($uploadDir, 0775, true)) {
-    header("Location: /IMK/profile/index.php?error=Folder upload tidak tersedia.");
+    header("Location: /IMK-MentalCare-/profile/index.php?error=Folder upload tidak tersedia.");
     exit;
   }
 }
@@ -81,13 +81,13 @@ mysqli_stmt_close($stmt);
 $newName = 'u' . $user_id . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
 
 // Simpan path RELATIF yang konsisten dengan sidebar Anda
-// => nanti URL jadi /IMK/uploads/avatars/xxx.jpg
+// => nanti URL jadi /IMK-MentalCare-/uploads/avatars/xxx.jpg
 $newRelPath = 'uploads/avatars/' . $newName;
 $destPath   = $uploadDir . $newName;
 
 // Pindahkan file
 if (!move_uploaded_file($tmpPath, $destPath)) {
-  header("Location: /IMK/profile/index.php?error=Gagal menyimpan file ke server.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Gagal menyimpan file ke server.");
   exit;
 }
 
@@ -100,7 +100,7 @@ mysqli_stmt_close($upd);
 if (!$ok) {
   // rollback: hapus file baru kalau DB gagal
   @unlink($destPath);
-  header("Location: /IMK/profile/index.php?error=Gagal menyimpan ke database.");
+  header("Location: /IMK-MentalCare-/profile/index.php?error=Gagal menyimpan ke database.");
   exit;
 }
 
@@ -116,5 +116,5 @@ if (!empty($oldPhoto)) {
   }
 }
 
-header("Location: /IMK/profile/index.php?success=Foto profil berhasil diperbarui.");
+header("Location: /IMK-MentalCare-/profile/index.php?success=Foto profil berhasil diperbarui.");
 exit;
