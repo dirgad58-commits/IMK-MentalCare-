@@ -13,7 +13,7 @@ function is_active($needle, $path) {
   return str_contains($path, $needle) ? 'active' : '';
 }
 
-$APP_BASE = '/IMK/'; // sesuaikan jika folder project berbeda
+$APP_BASE = '/IMK-MentalCare-/'; // sesuaikan jika folder project berbeda
 
 // Ambil foto dari session dulu. Jika belum ada, ambil dari DB lalu cache ke session.
 $photoRel = $_SESSION['photo'] ?? '';
@@ -49,7 +49,7 @@ if (!empty($photoRel)) {
 <aside class="col-md-3 col-lg-2 min-vh-100 d-flex flex-column p-3 sidebar-wrapper">
 
   <div class="sidebar-brand mb-3">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="/IMK/index.php">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/IMK-MentalCare-/index.php">
       <div class="brand-badge"><i class="bi bi-heart-pulse-fill"></i></div>
       <div>
         <div class="fw-bold font-head" style="line-height:1.1">MentalCare</div>
@@ -84,7 +84,7 @@ if (!empty($photoRel)) {
 
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center gap-2 <?= is_active('/dashboard/', $path); ?>"
-           href="/IMK/dashboard/index.php">
+           href="/IMK-MentalCare-/dashboard/index.php">
           <i class="bi bi-speedometer2 fs-5"></i>
           <span>Dashboard</span>
         </a>
@@ -92,7 +92,7 @@ if (!empty($photoRel)) {
 
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center gap-2 <?= is_active('/journal/', $path); ?>"
-           href="/IMK/journal/index.php">
+           href="/IMK-MentalCare-/journal/index.php">
           <i class="bi bi-journal-text fs-5"></i>
           <span>Jurnal Pribadi</span>
         </a>
@@ -100,7 +100,7 @@ if (!empty($photoRel)) {
 
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center gap-2 <?= is_active('/discussion/', $path); ?>"
-           href="/IMK/discussion/index.php">
+           href="/IMK-MentalCare-/discussion/index.php">
           <i class="bi bi-chat-dots fs-5"></i>
           <span>Diskusi</span>
         </a>
@@ -108,7 +108,7 @@ if (!empty($photoRel)) {
 
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center gap-2 <?= is_active('/self_help/', $path); ?>"
-           href="/IMK/self_help/index.php">
+           href="/IMK-MentalCare-/self_help/index.php">
           <i class="bi bi-lightbulb fs-5"></i>
           <span>Self Help</span>
         </a>
@@ -116,7 +116,7 @@ if (!empty($photoRel)) {
 
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center gap-2 <?= is_active('/profile/', $path); ?>"
-           href="/IMK/profile/index.php">
+           href="/IMK-MentalCare-/profile/index.php">
           <i class="bi bi-person-circle fs-5"></i>
           <span>Profil</span>
         </a>
@@ -126,7 +126,7 @@ if (!empty($photoRel)) {
   </nav>
 
   <div class="sidebar-footer pt-3 mt-3 border-top">
-    <a href="/IMK/logout.php"
+    <a href="/IMK-MentalCare-/logout.php"
        class="btn btn-outline-danger w-100 d-flex align-items-center justify-content-center gap-2">
       <i class="bi bi-box-arrow-right fs-5"></i>
       <span>Logout</span>
